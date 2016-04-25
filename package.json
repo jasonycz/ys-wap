@@ -1,0 +1,57 @@
+{
+  "name": "ys-project-wap",
+  "version": "1.0.0",
+  "description": "玉石wap项目",
+  "main": "index.js",
+  "dependencies": {
+    "angular": "1.4.10",
+    "angular-animate": "1.4.10",
+    "angular-cookies": "1.4.10",
+    "angular-i18n": "1.4.10",
+    "angular-resource": "1.4.10",
+    "angular-route": "1.4.10",
+    "angular-sanitize": "1.4.10",
+    "angular-touch": "1.4.10",
+    "jquery": "^2.2.3",
+    "moment": "^2.13.0",
+    "ngstorage": "^0.3.10"
+  },
+  "devDependencies": {
+    "browser-sync": "^2.12.3",
+    "del": "^2.2.0",
+    "gulp": "^3.9.1",
+    "gulp-angular-filesort": "^1.1.1",
+    "gulp-angular-templatecache": "^1.8.0",
+    "gulp-autoprefixer": "^3.1.0",
+    "gulp-clean-css": "^2.0.6",
+    "gulp-concat": "^2.6.0",
+    "gulp-csso": "^2.0.0",
+    "gulp-if": "^2.0.0",
+    "gulp-imagemin": "^2.4.0",
+    "gulp-inject": "^4.0.0",
+    "gulp-jshint": "^2.0.0",
+    "gulp-load-plugins": "^1.2.2",
+    "gulp-ng-annotate": "^2.0.0",
+    "gulp-rename": "^1.2.2",
+    "gulp-rev": "^7.0.0",
+    "gulp-rev-collector": "^1.0.3",
+    "gulp-rimraf": "^0.2.0",
+    "gulp-uglify": "^1.5.3",
+    "jshint": "^2.9.2",
+    "jshint-stylish": "^2.1.0",
+    "run-sequence": "^1.1.5",
+    "yargs": "^4.6.0"
+  },
+  "scripts": {
+    "init": "npm i",
+    "online": "shipit office deploy",
+    "start": "gulp serve",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git@47.88.4.159:yyjazsf/ysProject-wap.git"
+  },
+  "author": "yyj",
+  "license": "ISC"
+}
