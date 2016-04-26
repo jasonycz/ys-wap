@@ -1,10 +1,8 @@
-module.exports = function() {
-    var client = 'client',
-        clientApp = './client/app'
+module.exports = function () {
+    var client = './src',
+        clientApp = './src/app',
         dist = 'dist',
-        tmp = '.tmp',
-        docs = 'documentation',
-        landing = 'landing';
+        tmp = '.tmp';
     var config = {
         client: client,
         dist: dist,
@@ -16,45 +14,31 @@ module.exports = function() {
         ],
         assets: [
             client + "/app/**/*.html",
-            client + "/bower_components/font-awesome/css/*", 
-            client + "/bower_components/font-awesome/fonts/*", 
-            client + "/bower_components/weather-icons/css/*", 
-            client + "/bower_components/weather-icons/font/*", 
-            client + "/bower_components/weather-icons/fonts/*", 
-            client + "/bower_components/material-design-iconic-font/dist/**/*",
+            "/node_modules/font-awesome/css/*",
+            "/node_modules/font-awesome/fonts/*",
+            "/node_modules/weather-icons/css/*",
+            "/node_modules/weather-icons/font/*",
+            "/node_modules/material-design-iconic-font/dist/**/*",
             client + "/fonts/**/*",
-            client + "/i18n/**/*", 
-            client + "/images/**/*", 
-            client + "/styles/loader.css", 
-            client + "/styles/ui/images/*", 
+            client + "/images/**/*",
             client + "/favicon.ico"
         ],
-        less: [],
         sass: [
-            client + "/styles/**/*.scss"
+            //client + "/styles/**/*.scss"
+            client + "/styles/main.scss"
         ],
         js: [
             clientApp + "/**/*.module.js",
             clientApp + "/**/*.js",
             '!' + clientApp + "/**/*.spec.js"
         ],
-        docs: docs, 
-        docsJade: [
-            docs + "/jade/index.jade",
-            docs + "/jade/faqs.jade",
-            docs + "/jade/layout.jade"
-        ],
         allToClean: [
-            tmp, 
+            tmp,
             ".DS_Store",
             ".sass-cache",
             "node_modules",
             ".git",
-            client + "/bower_components",
-            docs + "/jade",
-            docs + "/layout.html",
-            landing + "/jade",
-            landing + "/bower_components",
+            //client + "/node_modules",
             "readme.md"
         ]
     };

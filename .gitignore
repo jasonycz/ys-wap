@@ -17,10 +17,11 @@ Thumbs.db
 *.pyc
 *.pyo
 
+npm-debug.log
+
 node_modules
 bower_components
 dist
-
 
 # vscode typings
 typings

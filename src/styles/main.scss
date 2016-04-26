@@ -1,26 +1,20 @@
-
 // Shared variables and mixins
-@import
-    "global/var"                        // global variables
-,   "global/var-extra"                  // extra global variables
-,   "bootstrap/bootstrap/mixins"        // Bootstrap mixins
-,   "bourbon/bourbon"                   // mixins
-;
-
-
-@import
-    "global/shared"
+@import "global/var"; // global variables
+@import "global/var-extra"; // extra global variables
+@import "bootstrap/bootstrap/mixins"; // Bootstrap mixins
+@import "bourbon/bourbon"; // mixins
+@import "global/shared";
 
 // Plugins, overrides plugins' style
-,   "plugins/angular-bootstrap"
-,   "plugins/angular-material"
-,   "plugins/angular-ui-tree"
-,   "plugins/responsive-tables"
-,   "plugins/jquery-steps"
-,   "plugins/angular-wizard"
+//@import "plugins/angular-bootstrap";
+@import "plugins/angular-material";
+@import "plugins/angular-ui-tree";
+@import "plugins/responsive-tables";
+@import "plugins/jquery-steps";
+@import "plugins/angular-wizard";
 
 // Pages
-,   "global/var-pages"
+@import "global/var-pages"
 ,   "pages/dashboard"
 ,   "pages/pages"
 ,   "pages/error"
@@ -32,7 +26,6 @@
 ,   "pages/demo"
 ,   "pages/demo-material"
 ,   "pages/preview-article"
-
 // sections
 ,   "layout/layouts"
 ,   "layout/nav"
@@ -42,4 +35,3 @@
 ,   "layout/nav-color"
 ,   "layout/header"
 ,   "layout/body"
-;
