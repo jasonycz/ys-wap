@@ -12,5 +12,7 @@
     "moment": "registry:dt/moment#2.8.0+20160316155526",
     "ngstorage": "registry:dt/ngstorage#0.3.10+20160417130404"
   },
-  "ambientDependencies": {}
+  "ambientDependencies": {
+    "angular-material": "registry:dt/angular-material#1.0.0-rc5.0+20160412154003"
+  }
 }

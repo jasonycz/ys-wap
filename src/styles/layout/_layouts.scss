@@ -52,8 +52,6 @@ html {
             }
 
         }
-
-        .top-header {}
     }
 
     > .main-container {
@@ -85,7 +83,6 @@ html {
             z-index: 11; // should be highter than top header
             position: static;
             float: left;
-            width: 220px;
             @include transition(width .25s ease-in-out);
             // border-width: 0 1px 0 0;
             // border-style: solid;
@@ -126,9 +123,9 @@ html {
             margin-left: 0;
             // @include transition(none);
             @include transition(margin-left .25s ease-in-out);
-            @media (min-width:$screen-sm) {
-                margin-left: 220px;
-            }
+            // @media (min-width:$screen-sm) {
+            //     margin-left: 220px;
+            // }
         }
 
     }

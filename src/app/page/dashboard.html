@@ -1,0 +1,19 @@
+<div class="col-md-4" ng-repeat="item in vm.items track by $index">
+  <div class="card bg-white">
+    <div class="card-image">
+      <img ng-src="{{item.img.url}}" alt="{{item.img.imgdesc}}">
+      <span class="card-title" ng-bind="item.craft_name"></span>
+    </div>
+    <div class="card-content">
+      <a class="card-button pull-right">
+        <button class="btn btn-icon btn-icon-round btn-floating btn-danger">
+          <i class="fa fa-heart"></i>
+        </button>
+      </a>
+      <p ng-bind="item.describe"></p>
+    </div>
+    <div class="card-action">
+      <a ui-sref="page.article({craft_id:{{item.craft_id}}})">详情</a>
+    </div>
+  </div>
+</div>

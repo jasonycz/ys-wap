@@ -1,7 +1,14 @@
 
 'use strict';
 
-angular.module('app',[
+angular.module('app', [
+
+  // Core modules
   'app.core'
+
+  //Custom modules
+  , 'app.page'
+
 ]);
+
 
