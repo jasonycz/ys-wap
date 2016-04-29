@@ -1,5 +1,11 @@
 <div class="page">
   <ng-include src="'app/page/user-header.html'" class="page-profile"></ng-include>
-
-  <h1>文章</h1>
+  <h2 class="md-title" ng-bind="vm.article.craft_name"></h2>
+  <div>
+    <span ng-bind="vm.article.created_time"></span>
+  </div>
+  <div>
+    <img ng-src="{{vm.article.img.url}}" alt="玉石">
+    <div ng-bind-html="vm.article.describe"></div>
+  </div>
 </div>
