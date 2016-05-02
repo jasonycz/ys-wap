@@ -13,24 +13,24 @@
 
         $stateProvider
           .state('dashboard', {
-            url: '/dashboard',
+            url: '/dashboard/:studioid',
             templateUrl: 'app/page/dashboard.html',
             controller: 'DashboardCtrl',
             controllerAs: 'vm'
           })
-          .state('page', {
+          .state('wap', {
             abstract: true,
-            url: '/page',
+            url: '/wap',
             template: '<div ui-view class="fade-in-up"></div>'
           })
-          .state('page.article', {
-            url: '/article/:craft_id',
+          .state('wap.show', {
+            url: '/show/:studioid/:craftid/2',
             templateUrl: 'app/page/article.html',
             controller: 'ArticleCtrl',
             controllerAs: 'vm'
           })
-          .state('page.jadeLife', {
-            url: '/jadeLife/:craft_id',
+          .state('wap.jadeLife', {
+            url: '/show/:studioid/:craftid/1',
             templateUrl: 'app/page/jadeLife.html',
             controller: 'JadeLifeCtrl',
             controllerAs: 'vm'

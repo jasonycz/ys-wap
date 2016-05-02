@@ -1,21 +1,28 @@
 angular
   .module('app.page')
-  .controller('DashboardCtrl', ['api', DashboardCtrl])
-  .controller('ArticleCtrl', ['api', ArticleCtrl])
-  .controller('JadeLifeCtrl', ['api', JadeLifeCtrl])
+  .controller('DashboardCtrl', ['$stateParams', 'api', DashboardCtrl])
+  .controller('ArticleCtrl', ['$stateParams', 'api', ArticleCtrl])
+  .controller('JadeLifeCtrl', ['$stateParams', 'api', JadeLifeCtrl])
   ;
 
 /**
  * 面板
  */
-function DashboardCtrl(api) {
+function DashboardCtrl($stateParams, api) {
 
   var vm = this;
+
+  app.data.studio = {
+    studioid: $stateParams.studioid,
+    craftid: $stateParams.craftid,
+    type: $stateParams.type
+  };
+
   vm.items = [];
 
   api.wap.showall({
     params: {
-      studioid: 1
+      studioid: app.data.studio.studioid
     }
   }).then(function (res) {
     if (res.data.errNo === 0 && res.data.result.length > 0) {
@@ -52,14 +59,16 @@ function DashboardCtrl(api) {
 /**
  * 文章
  */
-function ArticleCtrl(api) {
+function ArticleCtrl($stateParams, api) {
+
   var vm = this;
+
   vm.article = {};
   api.wap.show({
     params: {
-      type: 1,
-      studioid: '',
-      craftid: ''
+      type: $stateParams.type,
+      studioid: $stateParams.studioid,
+      craftid: $stateParams.craftid
     }
   }).then(function (res) {
     if (res.data.errNo != 0) {
@@ -75,9 +84,29 @@ function ArticleCtrl(api) {
 /**
  * 时间轴
  */
-function JadeLifeCtrl(api) {
+function JadeLifeCtrl($stateParams, api) {
   var vm = this;
+
+  app.data.studio = {
+    type: $stateParams.type,
+    studioid: $stateParams.studioid,
+    craftid: $stateParams.craftid
+  };
+
   vm.timeLine = {};
+  api.wap.show({
+    params: {
+      type: $stateParams.type,
+      studioid: $stateParams.studioid,
+      craftid: $stateParams.craftid
+    }
+  }).then(function (res) {
+    if (res.data.errNo != 0) {
+      return;
+    }
+    vm.timeLine = res.data.result;
+
+  });
 
   console.log('JadeLifeCtrl');
 }

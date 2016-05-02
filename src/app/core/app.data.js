@@ -1,6 +1,10 @@
 
 var app = app || {};
 
+app.data={
+  studio:null
+};
+
 app.loadjs = function (url, cb) {
   var head = document.getElementsByTagName('head')[0];
   var script = document.createElement("script");
@@ -31,10 +35,11 @@ app.loadjs = function (url, cb) {
 };
 
 
+
+
 /**
  * 分享
  */
-
 window.shareData = {
   "imgUrl": "分享图片url",
   "timeLineLink": "当前页面的url",
@@ -43,6 +48,6 @@ window.shareData = {
   "tTitle": "分享标题",
   "tContent": "分享内容"
 };
-
+//
 
 

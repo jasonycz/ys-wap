@@ -10,31 +10,32 @@
         <div class="tl-body">
           <div class="tl-entry">
             <div class="tl-caption">
-              <a href="javascript:;" class="btn btn-primary btn-block">Today</a>
+              <a href="javascript:;" class="btn btn-primary btn-block">玉石溯源</a>
             </div>
           </div>
         </div>
       </article>
 
-      <article class="tl-item">
+      <article class="tl-item" ng-repeat="item in vm.timeLine track by $index">
         <div class="tl-body">
           <div class="tl-entry">
-            <div class="tl-time">3 min ago</div>
+            <div class="tl-time" ng-bind="::item.name"></div>
             <div class="tl-icon btn-icon-round btn-icon btn-icon-thin btn-info">
               <i class="fa fa-asterisk"></i>
             </div>
             <div class="tl-content">
-              <h4 class="tl-tile text-primary">Go hiking</h4>
-              <p>Consectetur adipisicing elit. Error, accusantium debitis voluptatem dolore excepturi ducimus
-                fugiat nulla perspiciatis quo ipsum non eligendi nisi veniam maxime in quas atque omnis
-                cumque!
-              </p>
+              <h4 class="tl-tile text-primary" ng-bind="::item.describe"></h4>
+              <ul>
+                <li ng-repeat="img in item.img">
+                  <img ng-src="{{img.src}}" alt="{{item.name}}阶段的图片">
+                </li>
+              </ul>
             </div>
           </div>
         </div>
       </article>
 
-      <article class="tl-item alt">
+      <!--<article class="tl-item alt">
         <div class="tl-body">
           <div class="tl-entry">
             <div class="tl-time">1 hour ago</div>
@@ -96,7 +97,7 @@
             </div>
           </div>
         </div>
-      </article>
+      </article>-->
 
     </section>
   </div>
