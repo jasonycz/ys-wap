@@ -96,7 +96,7 @@ function startBrowserSync(opt) {
   }
 
   var options = {
-    port: 8000,
+    port: 3000,
     ghostMode: {
       clicks: false,
       location: false,

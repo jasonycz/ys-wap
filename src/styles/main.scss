@@ -4,7 +4,10 @@
 , "bootstrap/bootstrap/mixins" // Bootstrap mixins
 , "bourbon/bourbon" // mixins
 , "global/shared" // Plugins, overrides plugins' style
-, "plugins/angular-bootstrap", "plugins/angular-material" //,   "plugins/angular-ui-tree"
+, "plugins/angular-bootstrap"
+, "plugins/angular-material" 
+, "plugins/swiper"
+//,   "plugins/angular-ui-tree"
 //,   "plugins/responsive-tables"
 //,   "plugins/jquery-steps"
 //,   "plugins/angular-wizard"

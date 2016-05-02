@@ -1,6 +1,6 @@
 angular
   .module('app.page')
-  .controller('DashboardCtrl', [DashboardCtrl])
+  .controller('DashboardCtrl', ['api', DashboardCtrl])
   .controller('ArticleCtrl', ['api', ArticleCtrl])
   .controller('JadeLifeCtrl', ['api', JadeLifeCtrl])
   ;
@@ -8,21 +8,43 @@ angular
 /**
  * 面板
  */
-function DashboardCtrl() {
+function DashboardCtrl(api) {
 
   var vm = this;
+  vm.items = [];
 
-  vm.items = [
-    {
-      "craft_id": 2,
-      "craft_name": "\u6d4b\u8bd5two",
-      "describe": "sdffds",
-      "img": {
-        "url": "http:\/\/bbs.byr.cn\/att\/Travel\/0\/127173\/221526",
-        "imgdesc": "test imgae"
-      }
+  api.wap.showall({
+    params: {
+      studioid: 1
     }
-  ];
+  }).then(function (res) {
+    if (res.data.errNo === 0 && res.data.result.length > 0) {
+      vm.items = res.data.result;
+      //滑块
+      vm.swiperOptions = {
+        data: [
+          {
+            imgUrl: 'images/assets/600_400-2.jpg',
+            detailsUrl: ''
+          },
+          {
+            imgUrl: 'images/assets/600_400-1.jpg',
+            detailsUrl: ''
+          }
+        ],
+        onSlideChangeStart: function (swiper) {
+          //console.log(swiper);
+        },
+        onSlideChangeEnd: function (swiper) {
+          //console.log(swiper);
+        }
+      }
+
+    }
+    else {
+      alert('暂时没有结果');
+    }
+  });
 
   console.log('DashboardCtrl');
 }
@@ -32,15 +54,20 @@ function DashboardCtrl() {
  */
 function ArticleCtrl(api) {
   var vm = this;
-  vm.article = {
-    "craft_id": 2,
-    "craft_name": "\u6d4b\u8bd5two",
-    "describe": "sdffds",
-    "img": {
-      "url": "http:\/\/bbs.byr.cn\/att\/Travel\/0\/127173\/221526",
-      "imgdesc": "test imgae"
+  vm.article = {};
+  api.wap.show({
+    params: {
+      type: 1,
+      studioid: '',
+      craftid: ''
     }
-  };
+  }).then(function (res) {
+    if (res.data.errNo != 0) {
+      return;
+    }
+    vm.article = res.data.result;
+
+  });
 
   console.log('ArticleCtrl');
 }
