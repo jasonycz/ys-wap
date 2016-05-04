@@ -24,13 +24,13 @@
             template: '<div ui-view class="fade-in-up"></div>'
           })
           .state('wap.show', {
-            url: '/show/:studioid/:craftid/2',
+            url: '/show/:studioid/:craftid/1',
             templateUrl: 'app/page/article.html',
             controller: 'ArticleCtrl',
             controllerAs: 'vm'
           })
           .state('wap.jadeLife', {
-            url: '/show/:studioid/:craftid/1',
+            url: '/show/:studioid/:craftid/2',
             templateUrl: 'app/page/jadeLife.html',
             controller: 'JadeLifeCtrl',
             controllerAs: 'vm'

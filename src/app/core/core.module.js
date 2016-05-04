@@ -7,7 +7,7 @@ angular
     //, 'ngRoute'
     , 'ngResource'
     , 'ngSanitize'
-    , 'ngTouch'
+    // , 'ngTouch'
 
     //Custom modules
     , 'app.layout'

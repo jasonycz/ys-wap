@@ -4,7 +4,7 @@
   <div class="card bg-white">
     <div class="card-image">
       <img ng-src="{{item.img.url}}" alt="{{item.img.imgdesc}}">
-      <a ui-sref="wap.show({craftid:{{item.craft_id}}})">
+      <a ui-sref="wap.show({craftid:{{item.craft_id}},studioid:{{vm.data.studioid}}})">
         <span class="card-title" ng-bind="item.craft_name"></span>
       </a>
     </div>
@@ -14,7 +14,7 @@
           <i class="fa fa-heart"></i>
         </button>
       </a>
-      <a ui-sref="wap.show({craftid:{{item.craft_id}}})">
+      <a ui-sref="wap.show({studioid:{{vm.data.studioid}},craftid:{{item.craft_id}}})">
         <p ng-bind="item.describe"></p>
       </a>
     </div>

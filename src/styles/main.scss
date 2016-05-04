@@ -12,17 +12,24 @@
 //,   "plugins/jquery-steps"
 //,   "plugins/angular-wizard"
 //utils
-, 'loader' // Pages
-, "global/var-pages", "pages/dashboard", "pages/pages" //,   "pages/error"
+, 'loader' 
+// Pages
+, "global/var-pages"
+, "pages/dashboard"
+, "pages/pages" 
+//,   "pages/error"
 //,   "pages/auth"
-, "pages/profile" //,   "pages/invoice"
+, "pages/profile" 
+, "pages/article" 
+//,   "pages/invoice"
 //,   "pages/ui"
 //,   "pages/features"
 //,   "pages/demo"
 //,   "pages/demo-material"
 //,   "pages/preview-article"
 , "ui/ui" // sections
-, "layout/layouts" //,   "layout/nav"
+, "layout/layouts" 
+//,   "layout/nav"
 //,   "layout/nav-off-canvas"
 //,   "layout/nav-horizontal"
 //,   "layout/nav-min"

@@ -1,11 +1,14 @@
-<div class="page">
-  <ng-include src="'app/page/user-header.html'" class="page-profile"></ng-include>
+<div class="page page-article">
+  <!--<ng-include src="'app/page/user-header.html'" class="page-profile"></ng-include>-->
+  <div class="page-profile" ng-include="'app/page/user-header.html'">
+    
+  </div>
   <h2 class="md-title" ng-bind="vm.article.craft_name"></h2>
-  <div>
-    <span ng-bind="vm.article.created_time"></span>
+  <div class="intro">
+    <span ng-bind="vm.article.author"></span><span> 创建于：</span><span ng-bind="vm.article.created_time"></span>
   </div>
   <div>
-    <img ng-src="{{vm.article.img.url}}" alt="玉石">
-    <div ng-bind-html="vm.article.describe"></div>
+    <img ng-src="{{vm.article.img_url}}" alt="玉石">
+    <div class="content" ng-bind-html="vm.article.content"></div>
   </div>
 </div>

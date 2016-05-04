@@ -24,8 +24,8 @@ module.exports = function () {
             client + "/favicon.ico"
         ],
         sass: [
-            //client + "/styles/**/*.scss"
-            client + "/styles/main.scss"
+            client + "/styles/**/*.scss"
+            //client + "/styles/main.scss"
         ],
         js: [
             clientApp + "/**/*.module.js",

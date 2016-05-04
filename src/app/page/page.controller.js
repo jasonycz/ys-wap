@@ -11,41 +11,41 @@ angular
 function DashboardCtrl($stateParams, api) {
 
   var vm = this;
-
-  app.data.studio = {
+  vm.data={
     studioid: $stateParams.studioid,
     craftid: $stateParams.craftid,
     type: $stateParams.type
-  };
+  }
 
   vm.items = [];
 
+  vm.swiperOptions = {
+    data: [
+      {
+        imgUrl: 'images/assets/600_400-2.jpg',
+        detailsUrl: ''
+      },
+      {
+        imgUrl: 'images/assets/600_400-1.jpg',
+        detailsUrl: ''
+      }
+    ],
+    onSlideChangeStart: function (swiper) {
+      //console.log(swiper);
+    },
+    onSlideChangeEnd: function (swiper) {
+      //console.log(swiper);
+    }
+  }
+
   api.wap.showall({
     params: {
-      studioid: app.data.studio.studioid
+      studioid: vm.data.studioid
     }
   }).then(function (res) {
     if (res.data.errNo === 0 && res.data.result.length > 0) {
       vm.items = res.data.result;
       //滑块
-      vm.swiperOptions = {
-        data: [
-          {
-            imgUrl: 'images/assets/600_400-2.jpg',
-            detailsUrl: ''
-          },
-          {
-            imgUrl: 'images/assets/600_400-1.jpg',
-            detailsUrl: ''
-          }
-        ],
-        onSlideChangeStart: function (swiper) {
-          //console.log(swiper);
-        },
-        onSlideChangeEnd: function (swiper) {
-          //console.log(swiper);
-        }
-      }
 
     }
     else {
@@ -62,23 +62,28 @@ function DashboardCtrl($stateParams, api) {
 function ArticleCtrl($stateParams, api) {
 
   var vm = this;
+  vm.data={
+    studioid: $stateParams.studioid,
+    craftid: $stateParams.craftid,
+    type: $stateParams.type||1
+  }
 
   vm.article = {};
   api.wap.show({
     params: {
-      type: $stateParams.type,
-      studioid: $stateParams.studioid,
-      craftid: $stateParams.craftid
+      type: $stateParams.type||1,
+      studioid: vm.data.studioid,
+      craftid: vm.data.craftid
     }
   }).then(function (res) {
     if (res.data.errNo != 0) {
       return;
     }
-    vm.article = res.data.result;
+    vm.article = res.data.result[0];
 
   });
 
-  console.log('ArticleCtrl');
+  //console.log('ArticleCtrl');
 }
 
 /**
@@ -86,29 +91,27 @@ function ArticleCtrl($stateParams, api) {
  */
 function JadeLifeCtrl($stateParams, api) {
   var vm = this;
-
-  app.data.studio = {
-    type: $stateParams.type,
+  vm.data={
     studioid: $stateParams.studioid,
-    craftid: $stateParams.craftid
-  };
-
+    craftid: $stateParams.craftid,
+    type: $stateParams.type||2
+  }
   vm.timeLine = {};
   api.wap.show({
     params: {
-      type: $stateParams.type,
-      studioid: $stateParams.studioid,
-      craftid: $stateParams.craftid
+      type: vm.data.type,
+      studioid: vm.data.studioid,
+      craftid: vm.data.craftid
     }
   }).then(function (res) {
     if (res.data.errNo != 0) {
       return;
     }
-    vm.timeLine = res.data.result;
+    vm.timeLine = res.data.result.timeline;
 
   });
 
-  console.log('JadeLifeCtrl');
+  //console.log('JadeLifeCtrl');
 }
 
 
