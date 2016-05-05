@@ -69,6 +69,7 @@ gulp.task('sass', function () {
     .src(config.sass)
     .pipe($.plumber({ errorHandler: swallowError }))
     .pipe($.sass(sassOptions))
+    .pipe($.rename({ suffix: '.min' }))
     .pipe(gulp.dest(config.tmp + '/styles'));
 });
 

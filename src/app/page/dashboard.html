@@ -1,22 +1,49 @@
 <div ui-swiper="vm.swiperOptions" class="swiper-container"></div>
 
-<div class="col-md-4" ng-repeat="item in vm.items track by $index">
-  <div class="card bg-white">
-    <div class="card-image">
-      <img ng-src="{{item.img.url}}" alt="{{item.img.imgdesc}}">
-      <a ui-sref="wap.show({craftid:{{item.craft_id}},studioid:{{vm.data.studioid}}})">
-        <span class="card-title" ng-bind="item.craft_name"></span>
+<div class="page-dashboard">
+  <ul class="dashboard-menu clearfix">
+    <li>
+      <a href="tel:10010">
+        <i class="fa fa-phone"></i>
+        <span>呼叫</span>
       </a>
+    </li>
+    <li>
+      <a href="#">
+        <i class="fa fa-share"></i>
+        <span>分享</span>
+      </a>
+    </li>
+    <li>
+      <a href="mailto:602988068@qq.com">
+        <i class="fa fa-envelope-o"></i>
+        <span>邮件</span>
+      </a>
+    </li>
+  </ul>
+</div>
+
+<div class="page page-dashboard">
+  <h4 class="page-title">雕件列表</h2>
+    <div class="col-md-4" ng-repeat="item in vm.items track by $index">
+      <div class="card bg-white">
+        <div class="card-image">
+          <img ng-src="{{item.img.url}}" alt="{{item.img.imgdesc}}">
+          <a ui-sref="wap.show({studioid:{{vm.data.studioid}},craftid:{{item.craft_id}}})">
+            <span class="card-title" ng-bind="item.craft_name"></span>
+          </a>
+        </div>
+        <div class="card-content">
+          <a class="card-button pull-right" ui-sref="wap.show({studioid:{{vm.data.studioid}},craftid:{{item.craft_id}}})">
+            <button class="btn btn-icon btn-icon-round btn-floating btn-danger">
+              <i class="fa fa-heart"></i>
+            </button>
+          </a>
+          <a ui-sref="wap.show({studioid:{{vm.data.studioid}},craftid:{{item.craft_id}}})">
+            <p ng-bind="item.describe"></p>
+          </a>
+        </div>
+      </div>
     </div>
-    <div class="card-content">
-      <a class="card-button pull-right" ui-sref="wap.show({craftid:{{item.craft_id}}})">
-        <button class="btn btn-icon btn-icon-round btn-floating btn-danger">
-          <i class="fa fa-heart"></i>
-        </button>
-      </a>
-      <a ui-sref="wap.show({studioid:{{vm.data.studioid}},craftid:{{item.craft_id}}})">
-        <p ng-bind="item.describe"></p>
-      </a>
-    </div>
-  </div>
+
 </div>
