@@ -37,7 +37,26 @@ gulp.task('inject', function () {
     .pipe(gulp.dest(config.client));
 });
 
+gulp.task('optimize', ['inject', 'sass-min'], function () {
+  log('Optimizing the js, css, html');
 
+  // var assets = $.useref({
+  //   searchPath: [config.client, config.tmp, config.npm]
+  // });
+
+  return gulp
+    .src(config.index)
+    .pipe($.plumber({ errorHandler: swallowError }))
+
+    //.pipe($.if('*.css',$.concat('styles/main.css')))
+    .pipe($.useref({ searchPath: [config.client, config.tmp, config.npm] }))
+    .pipe($.if('*.js', $.uglify())
+      .pipe(gulp.dest(config.dist)));
+});
+
+gulp.task('build', ['optimize', 'copy'], function () {
+  //startBrowserSync('dist');
+});
 
 gulp.task('sass', function () {
   log('Compiling Sass --> CSS');

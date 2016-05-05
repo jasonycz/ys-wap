@@ -2,11 +2,13 @@ module.exports = function () {
     var client = './src',
         clientApp = './src/app',
         dist = 'dist',
+        npm = 'node_modules',
         tmp = '.tmp';
     var config = {
         client: client,
         dist: dist,
         tmp: tmp,
+        npm: npm,
         index: client + "/index.html",
         alljs: [
             client + "/app/**/*.js",
