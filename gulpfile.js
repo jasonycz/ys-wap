@@ -50,12 +50,12 @@ gulp.task('optimize', ['inject', 'sass-min'], function () {
 
     //.pipe($.if('*.css',$.concat('styles/main.css')))
     .pipe($.useref({ searchPath: [config.client, config.tmp, config.npm] }))
-    .pipe($.if('*.js', $.uglify())
-      .pipe(gulp.dest(config.dist)));
+    .pipe($.if('*.js', $.uglify()))//性能特别差
+    .pipe(gulp.dest(config.dist));
 });
 
 gulp.task('build', ['optimize', 'copy'], function () {
-  //startBrowserSync('dist');
+  startBrowserSync('dist');
 });
 
 gulp.task('sass', function () {
