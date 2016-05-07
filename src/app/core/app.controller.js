@@ -14,7 +14,7 @@
 
     //分享
 
-    var shareJs = 'http://101.201.198.27/wap/shares';
+    var shareJs = 'http://web.bellwebwork.com/wap/shares';
 
     api.wap
       .sharesdk()
